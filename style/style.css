@@ -1,0 +1,34 @@
+﻿.blanc{
+	background-color:white;
+}
+
+.noir{
+	background-color:grey;
+}
+
+.rouge{
+	background-color:red;
+}
+
+td{
+	width:40px;
+	height:40px;
+	border:solid 1px red;
+	margin:0px;
+}
+
+#plateau{
+	padding:20px;
+	background-color:bisque;
+	width:360px;
+	border-radius:15px;
+}
+
+#echiquier{
+	border: solid 2px red;
+}
+
+/*img{
+	height:35px;
+	width:auto;
+}*/
