@@ -21,18 +21,18 @@ for (i = 1; i < 9; i++) {
 		if(i==1 || i==8){
 			switch(i){
 				case 1:
-					switch(j){
+					switch(j%2){
 						case 1:
 						case 8:
-							html+="<img id=br"+j+" src='img/br.gif'></img>";
+							html+="<img id=br"+j+" src='img/blue.png'></img>";
 							break;
 						case 2:
 						case 7:
-							html+="<img id=bn"+j+" src='img/bn.gif'></img>";
+							html+="<img id=bn"+j+" src='img/red.png'></img>";
 							break;
 						case 3:
 						case 6:
-							html+="<img id=bb"+j+" src='img/bb.gif'></img>";
+							html+="<img id=bb"+j+" src='img/red.png'></img>";
 							break;
 						case 4:
 							html+="<img id=bq"+j+" src='img/bq.gif'></img>";
