@@ -1,3 +1,4 @@
+var tourJ2=false;
 
 html="";
 html=html+"<table id=echiquier>";
@@ -6,64 +7,20 @@ for (i = 1; i < 9; i++) {
 	for (j = 1; j < 9; j++) {
 		html+="<td id='cell-c"+j+"-l"+i+"' class=";
 		if ((i+j)%2==0){
-			html+="blanc";
-		}
-		else{
 			html+="noir";
 		}
+		else{
+			html+="blanc";
+		}
 		html+=">";
-		if(i==2){
-			html+="<img id=bp"+j+" src='img/bp.gif'></img>";
+		if (i>0 && i<4){
+			if((i+j)%2==0){
+				html+="<img id=bleu"+i+"-"+j+" src='img/blue.png'></img>";
+			}
 		}
-		if(i==7){
-			html+="<img id=wp"+j+" src='img/wp.gif'></img>";
-		}
-		if(i==1 || i==8){
-			switch(i){
-				case 1:
-					switch(j%2){
-						case 1:
-						case 8:
-							html+="<img id=br"+j+" src='img/blue.png'></img>";
-							break;
-						case 2:
-						case 7:
-							html+="<img id=bn"+j+" src='img/red.png'></img>";
-							break;
-						case 3:
-						case 6:
-							html+="<img id=bb"+j+" src='img/red.png'></img>";
-							break;
-						case 4:
-							html+="<img id=bq"+j+" src='img/bq.gif'></img>";
-							break;
-						case 5:
-							html+="<img id=bk"+j+" src='img/bk.gif'></img>";
-							break;
-					}
-					break;
-				case 8:
-					switch(j){
-						case 1:
-						case 8:
-							html+="<img id=wr"+j+" src='img/wr.gif'></img>";
-							break;
-						case 2:
-						case 7:
-							html+="<img id=wn"+j+" src='img/wn.gif'></img>";
-							break;
-						case 3:
-						case 6:
-							html+="<img id=wb"+j+" src='img/wb.gif'></img>";
-							break;
-						case 4:
-							html+="<img id=wq"+j+" src='img/wq.gif'></img>";
-							break;
-						case 5:
-							html+="<img id=wk"+j+" src='img/wk.gif'></img>";
-							break;
-					}
-					break;
+		if (i>5 && i<9){
+			if((i+j)%2==0){
+				html+="<img id=bleu"+i+"-"+j+" src='img/red.png'></img>";
 			}
 		}
 		html+="</td>";
@@ -73,43 +30,18 @@ for (i = 1; i < 9; i++) {
 html=html+"</table>";
 $('#plateau').html(html);
 
-for (i = 1; i < 9; i++) {
-	for (j = 1; j < 9; j++) {
-		if(i==2 || i==7){
-			$("#cell-c"+j+"-l"+i).mouseover(myScript);
-			if ((i+j)%2==0){
-				$("#cell-c"+j+"-l"+i).mouseout(retourBlanc);
-			}
-			else{
-				$("#cell-c"+j+"-l"+i).mouseout(retourNoir);
-			}
-		}
-		else{
-			if(i==1 || i==8){
-				if(j==2||j==7){
-					$("#cell-c"+j+"-l"+i).mouseover(myScript);
-					if ((i+j)%2==0){
-						$("#cell-c"+j+"-l"+i).mouseout(retourBlanc);
-					}
-					else{
-						$("#cell-c"+j+"-l"+i).mouseout(retourNoir);
-					}
-				}
-			}
-		}
+
+$("#plateau td:not(:empty)").mouseover(function (){
+	console.log($(this).children("img").attr("src"));
+	if ($(this).children("img").attr("src")=="img/blue.png" && tourJ2==false){
+		$(this).removeClass("noir").removeClass("blanc").addClass("rouge");
 	}
-}
+	else if ($(this).children("img").attr("src")=="img/red.png" && tourJ2==true){
+		$(this).removeClass("noir").removeClass("blanc").addClass("rouge");
+	}
 	
 
 
-function myScript(){
-	$(this).addClass("rouge");
-}
-
-function retourBlanc(){
-	$(this).removeClass("rouge").addClass("blanc");
-}
-
-function retourNoir(){
+}).mouseout(function(){
 	$(this).removeClass("rouge").addClass("noir");
-}
+});

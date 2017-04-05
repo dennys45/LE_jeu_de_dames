@@ -24,6 +24,11 @@ td{
 	border-radius:15px;
 }
 
+#plateau img{
+	height: 36px;
+	width:36px;
+}
+
 #echiquier{
 	border: solid 2px red;
 }
