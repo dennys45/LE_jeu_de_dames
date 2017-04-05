@@ -6,8 +6,8 @@
 	background-color:grey;
 }
 
-.rouge{
-	background-color:red;
+.vert{
+	background-color:lime;
 }
 
 td{
@@ -20,7 +20,8 @@ td{
 #plateau{
 	padding:20px;
 	background-color:bisque;
-	width:360px;
+	width: 360px;
+	margin: auto;
 	border-radius:15px;
 }
 
@@ -33,7 +34,3 @@ td{
 	border: solid 2px red;
 }
 
-/*img{
-	height:35px;
-	width:auto;
-}*/
