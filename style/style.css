@@ -1,13 +1,22 @@
-﻿.blanc{
-	background-color:white;
+body {
+    margin-top: 130px;
+    background-image: url(../img/heaven_hell.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.blanc{
+	background-color: white;
 }
 
 .noir{
-	background-color:grey;
+	background-color: grey;
 }
 
 .vert{
-	background-color:lime;
+	background-color: lime;
 }
 
 td{
@@ -18,17 +27,18 @@ td{
 }
 
 #plateau{
-	padding:20px;
-	background-color:bisque;
+	padding: 20px;
+	background-color: bisque;
 	width: 360px;
 	margin: auto;
-	border-radius:15px;
+	border-radius: 15px;
+    
 }
 
-#plateau img{
-	height: 36px;
-	width:36px;
-}
+#plateau img {
+	   height: 36px;
+	   width: 36px;
+    }
 
 #echiquier{
 	border: solid 2px red;
