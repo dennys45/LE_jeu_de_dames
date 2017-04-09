@@ -39,7 +39,7 @@ $("#plateau td:not(:empty)").mouseover(function (){
 	var line=idCell[9];
 	if ($(this).children("img").attr("src")=="img/blue.png" && tourJ1==false){
 		$(this).removeClass("noir").addClass("vert");
-		if(line<8){
+		if(line<10){
 			if(col>1){
 				if ($("td#cell-c"+(col-1)+"-l"+(line-(-1))+" img").length<1){
 					$("td#cell-c"+(col-1)+"-l"+(line-(-1))).removeClass("noir").addClass("vert");
@@ -50,11 +50,11 @@ $("#plateau td:not(:empty)").mouseover(function (){
 					}
 				}
 			}
-			if(col<8){
+			if(col<10){
 				if ($("td#cell-c"+(col-(-1))+"-l"+(line-(-1))+" img").length<1){
 					$("td#cell-c"+(col-(-1))+"-l"+(line-(-1))).removeClass("noir").addClass("vert");
 				}
-				else if (col<7 && $("td#cell-c"+(col-(-1))+"-l"+(line-(-1))+" img").attr("src")=="img/red.png"){
+				else if (col<9 && $("td#cell-c"+(col-(-1))+"-l"+(line-(-1))+" img").attr("src")=="img/red.png"){
 					if($("td#cell-c"+(col-(-2))+"-l"+(line-(-2))+" img").length<1){
 						$("td#cell-c"+(col-(-2))+"-l"+(line-(-2))).removeClass("noir").addClass("vert");
 					}
@@ -81,11 +81,11 @@ $("#plateau td:not(:empty)").mouseover(function (){
 	else if ($(this).children("img").attr("src")=="img/red.png" && tourJ1==true){
 		$(this).removeClass("noir").addClass("vert");
 		if(line>1){
-			if(col<8){
+			if(col<10){
 				if ($("td#cell-c"+(col-(-1))+"-l"+(line-1)+" img").length<1){
 					$("td#cell-c"+(col-(-1))+"-l"+(line-1)).removeClass("noir").addClass("vert");
 				}
-				else if (col<7 && $("td#cell-c"+(col-(-1))+"-l"+(line-1)+" img").attr("src")=="img/blue.png"){
+				else if (col<9 && $("td#cell-c"+(col-(-1))+"-l"+(line-1)+" img").attr("src")=="img/blue.png"){
 					if($("td#cell-c"+(col-(-2))+"-l"+(line-2)+" img").length<1){
 						$("td#cell-c"+(col-(-2))+"-l"+(line-2)).removeClass("noir").addClass("vert");
 					}
