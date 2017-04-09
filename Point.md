@@ -12,7 +12,7 @@ les conflits de GIT sont résolus
 Un échiquier de 10x10 s'affiche
 Les pions sont au bon endroit
 On peut déplacer les pions
-~~seulement aux endroits où c'est possible~~ 
+~~seulement aux endroits où c'est possible~~ 75%
 ~~On peut "prendre" un pion adverse en le "sautant"~~
 
 #Plus
